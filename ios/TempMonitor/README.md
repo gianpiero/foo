@@ -1,4 +1,4 @@
-Todo Table
+TempMonitor
 ==========
 
 This is a Xcode project that illustrates how simple is to integrate data published using RTI Connext DDS with a third party service such as [Parse](http://www.parse.com/)
