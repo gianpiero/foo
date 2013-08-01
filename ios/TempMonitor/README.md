@@ -16,6 +16,6 @@ Learn More
 
 To learn more, take a look
  * at the official [RTI Prototyper with Lua Getting Started Guide](https://s3.amazonaws.com/RTI/RTI_BUNDLES/experimental/rti_prototyper_with_lua/RTI_Connext_Prototyper_GettingStarted.pdf)
- * the [RTI Blog posts about Lua](http://blogs.rti.com/tag/lua/)
- * the [RTI Community Portal](http://community.rti.com/search/site/Lua)
+ * at the [RTI Blog posts about Lua](http://blogs.rti.com/tag/lua/)
+ * at the [RTI Community Portal](http://community.rti.com/search/site/Lua)
  * at the offical [iOS Guide for Parse](https://www.parse.com/docs/ios_guide).
