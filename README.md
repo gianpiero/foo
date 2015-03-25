@@ -1,4 +1,6 @@
 foo
 ===
 
-A container for generic stuff I want to share
+First test on nodejs/c calls. 
+
+If you are looking for the RTI Connector for DDS Connext go [here](https://github.com/rticommunity/rticonnextdds-connector). 

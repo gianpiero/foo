@@ -1,0 +1,36 @@
+{
+  "name" : "dds", 
+  "version": "0.2.0",
+  "description": "First Example on how to call DDS C function from nodejs",
+  "main": "dds.js",
+  "scripts": {
+    "test": "echo \"test\""
+  },
+  "files" : [
+    "dds.js", 
+    "README.md",
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gianpiero/foo.git"
+  },
+  "dependencies" : {
+    "util" : "*",
+    "ffi" : "git+https://github.com/kjunichi/node-ffi.git#bad796888ad564bbc6a15b73579223b8f118605e"
+  },
+  "keywords": [
+    "rti",
+    "dds",
+    "connext",
+    "connector",
+    "pub",
+    "sub",
+    "pub-sub"
+  ],
+  "author": "Gianpiero Napoli <gianpiero@rti.com>",
+  "license": "See License File",
+  "bugs": {
+    "url": "https://github.com/gianpiero/foo/issues"
+  },
+  "homepage": "https://github.com/gianpiero/foo"
+}
