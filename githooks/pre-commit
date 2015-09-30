@@ -1,0 +1,15 @@
+# This pre-commit hook checks that the user.email belongs to 'rti.com'
+# end it aborts the commit if that's not the case
+
+#!/bin/sh
+AUTHORINFO=$(git var GIT_AUTHOR_IDENT) || exit 1
+NAME=$(printf '%s\n' "${AUTHORINFO}" | sed -n 's/^\(.*\) <.*$/\1/p')
+EMAIL=$(printf '%s\n' "${AUTHORINFO}" | sed -n 's/^.* <\(.*\)> .*$/\1/p')
+DOMAIN=`echo $EMAIL | sed -e 's/[^@]*@//'`
+[ "${DOMAIN}" == "rti.com" ] || {
+    cat <<EOF >&2
+COMMIT ABORTED 
+Please use an @rti.com email address instad of ${EMAIL}
+EOF
+    exit 1
+}
