@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<types xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="/Applications/RTI/rti_connext_dds-5.2.1/bin/../resource/app/app_support/rtiddsgen/schema/rti_dds_topic_types.xsd">
+<struct name= "Temp">
+  <member name="sensorId" id="0" type="long"/>
+  <member name="value" id="1" type="double"/>
+</struct>
+<struct name= "Measurements">
+  <member name="deviceId" id="0" type="long"/>
+  <member name="humidity" id="1" type="double"/>
+  <member name="pressure" id="2" type="double"/>
+  <member name="temperatures" sequenceMaxLength="10" id="3" type="nonBasic"  nonBasicTypeName= "Temp"/>
+</struct>
+</types>

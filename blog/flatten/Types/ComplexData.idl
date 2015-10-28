@@ -1,0 +1,10 @@
+struct Temp {
+  long sensorId;
+  double value;
+};
+struct Measurements {
+  long deviceId;
+  double humidity;
+  double pressure;
+  sequence<Temp,10> temperatures;
+};

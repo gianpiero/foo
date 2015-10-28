@@ -1,0 +1,52 @@
+
+<!--
+RTI Data Distribution Service Deployment
+-->
+<dds xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://community.rti.com/schema/5.2.0/rti_dds_profiles.xsd" version="5.2.0">
+    <!-- Qos Library -->
+	<qos_library name="QosLibrary">
+		<qos_profile name="DefaultProfile" is_default_qos="true">
+			<participant_qos>
+				<transport_builtin>
+					<mask>UDPV4 | SHMEM</mask>
+				</transport_builtin>
+			</participant_qos>
+		</qos_profile>
+	</qos_library>
+
+    <!-- types -->
+    <types>
+        <struct name= "Temp">
+          <member name="sensorId" id="0" type="long"/>
+          <member name="value" id="1" type="double"/>
+        </struct>
+        <struct name= "Measurements">
+          <member name="deviceId" id="0" type="long"/>
+          <member name="humidity" id="1" type="double"/>
+          <member name="pressure" id="2" type="double"/>
+          <member name="temperatures" sequenceMaxLength="10" id="3" type="nonBasic"  nonBasicTypeName= "Temp"/>
+        </struct>
+    </types>
+
+
+    <!-- Domain Library -->
+    <domain_library name="MyDomainLibrary">
+        <domain name="MyDomain" domain_id="0">
+            <register_type name="Measurements" kind="dynamicData" type_ref="Measurements"/>
+            <topic name="ComplexDataTopic"  register_type_ref="Measurements"/>
+        </domain>
+    </domain_library>
+
+
+    <!-- Participant library -->
+    <participant_library name="MyParticipantLibrary">
+
+    <domain_participant name="EmitterEmu" domain_ref="MyDomainLibrary::MyDomain">
+            <participant_qos base_name="QosLibrary::DefaultProfile"/>
+                <publisher name="MyPublisher">
+                    <data_writer name="MyComplexWriter" topic_ref="ComplexDataTopic" />
+                </publisher>
+        </domain_participant>
+
+    </participant_library>
+</dds>

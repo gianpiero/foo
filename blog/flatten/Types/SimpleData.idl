@@ -1,0 +1,4 @@
+struct SimpleMeasurements {
+  long deviceId;
+  double avgTmp;
+};
