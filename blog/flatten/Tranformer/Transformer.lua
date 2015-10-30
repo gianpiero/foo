@@ -18,7 +18,8 @@ for  i, sample in ipairs(myComplexReader.samples) do
 
         --setting the instance
         instance['deviceId'] = deviceId
-        instance['avgTmp']   = avgTmp
+        instance['avgTmp']   = (avgTmp - 32) * (5/9);
+        instance['unit'] = 1 -- C
         -- writing the simple instance
         print("Writing a simple sample with avgTmp = " .. instance['avgTmp'] )
         mySimpleWriter:write()

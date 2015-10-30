@@ -1,4 +1,11 @@
+enum Unit {
+   F,
+   C,
+   K
+};
+
 struct SimpleMeasurements {
   long deviceId;
   double avgTmp;
+  Unit unit;
 };

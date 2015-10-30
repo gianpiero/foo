@@ -1,3 +1,13 @@
+function getUnitString(value)
+    if value == 0 then
+        return "F"
+    elseif value == 1 then
+        return "C"
+    elseif value == 2 then
+        return "K"
+    end
+end
+
 
 local myComplexReader = CONTAINER.READER['MySubscriber::MyComplexReader']
 
@@ -16,7 +26,7 @@ for  i, sample in ipairs(myComplexReader.samples) do
         for i=1, sample['temperatures#'] do
             value = sample['temperatures[' .. i .. '].value'];
             sum = sum + value
-            print("\t\t sensorId: " .. sample['temperatures[' .. i .. '].sensorId'] .. " value: " .. value)
+            print("\t\t sensorId: " .. sample['temperatures[' .. i .. '].sensorId'] .. " value: " .. value .. " " .. getUnitString(sample['temperatures[' .. i .. '].unit']))
         end
         avgTmp = sum /  sample['temperatures#']
         print("\t The average temperature is: " .. avgTmp);

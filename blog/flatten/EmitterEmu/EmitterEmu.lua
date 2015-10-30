@@ -9,14 +9,19 @@ instance['humidity'] = 42
 instance['pressure'] = 43
 instance['temperatures[1].sensorId'] = 1
 instance['temperatures[1].value']    = 50
+instance['temperatures[1].unit']     = 0 -- F
 instance['temperatures[2].sensorId'] = 2
 instance['temperatures[2].value']    = 48
+instance['temperatures[2].unit']     = 0 -- F
 instance['temperatures[3].sensorId'] = 3
 instance['temperatures[3].value']    = 52
+instance['temperatures[3].unit']     = 0 -- F
 instance['temperatures[4].sensorId'] = 4
 instance['temperatures[4].value']    = 52
+instance['temperatures[4].unit']     = 0 -- F
 instance['temperatures[5].sensorId'] = 5
 instance['temperatures[5].value']    = 48
+instance['temperatures[5].unit']     = 0 -- F
 
 
 print(count .. ") writing a sample for deviceId: " .. instance['deviceId'] )

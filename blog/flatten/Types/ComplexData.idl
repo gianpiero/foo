@@ -1,6 +1,13 @@
+enum Unit {
+   F,
+   C,
+   K
+};
+
 struct Temp {
   long sensorId;
   double value;
+  Unit unit;
 };
 struct Measurements {
   long deviceId;

@@ -16,9 +16,15 @@ RTI Data Distribution Service Deployment
 
     <!-- types -->
     <types>
+		<enum name="Unit">
+		  <enumerator name="F"/>
+		  <enumerator name="C"/>
+		  <enumerator name="K"/>
+		</enum>
         <struct name= "Temp">
           <member name="sensorId" id="0" type="long"/>
           <member name="value" id="1" type="double"/>
+          <member name="unit" id="2" type="nonBasic"  nonBasicTypeName= "Unit"/>
         </struct>
         <struct name= "Measurements">
           <member name="deviceId" id="0" type="long"/>
@@ -30,6 +36,7 @@ RTI Data Distribution Service Deployment
         <struct name= "SimpleMeasurements">
           <member name="deviceId" id="0" type="long"/>
           <member name="avgTmp" id="1" type="double"/>
+          <member name="unit" id="2" type="nonBasic"  nonBasicTypeName= "Unit"/>
         </struct>
     </types>
 
